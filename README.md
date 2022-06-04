@@ -1,5 +1,11 @@
 # iKibble
 
+Hardware:
+- Raspberry Pi 2 1GB
+- Raspberry Pi Camera v2
+- SmartiPi Touch Pro (small)
+- Raspberry Pi 7" Touch Screen LCD
+
 Setting up the Raspberry Pi:
 - Intall Raspberry Pi OS Lite
 - sudo apt-get install --no-install-recommends xserver-xorg
