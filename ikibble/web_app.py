@@ -10,8 +10,8 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/kibble_options')
-def index():
+@app.route('/about')
+def about():
     return render_template('index.html')
 
 
