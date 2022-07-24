@@ -6,6 +6,9 @@ class Database:
         self.connection = sqlite3.connect('data/database.db')
         self.cursor = self.connection.cursor()
 
+        self.create_meals_table()
+        self.create_barcodes_table()
+
     def create_meals_table(self):
         table_query = """
         CREATE TABLE IF NOT EXISTS meals
@@ -39,6 +42,17 @@ class Database:
         self.cursor.execute(table_query)
         self.connection.commit()
 
+    def update_meals(self, time, date, half, prod_id):
+        table_query = f"""
+        INSERT INTO meals 
+        (feed_time, feed_date, half_pouch, product_id)
+        VALUES 
+        ({time}, {date}, {half}, {prod_id})
+        """
 
-db = Database()
-db.connection.close()
+        self.cursor.execute(table_query)
+        self.connection.commit()
+
+
+if __name__ == '__main__':
+    db = Database()
